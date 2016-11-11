@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Restarant_tag resource:
+  # CREATE
+  get "/restarant_tags/new", :controller => "restarant_tags", :action => "new"
+  post "/create_restarant_tag", :controller => "restarant_tags", :action => "create"
+
+  # READ
+  get "/restarant_tags", :controller => "restarant_tags", :action => "index"
+  get "/restarant_tags/:id", :controller => "restarant_tags", :action => "show"
+
+  # UPDATE
+  get "/restarant_tags/:id/edit", :controller => "restarant_tags", :action => "edit"
+  post "/update_restarant_tag/:id", :controller => "restarant_tags", :action => "update"
+
+  # DELETE
+  get "/delete_restarant_tag/:id", :controller => "restarant_tags", :action => "destroy"
+  #------------------------------
+
   # Routes for the Tag resource:
   # CREATE
   get "/tags/new", :controller => "tags", :action => "new"
