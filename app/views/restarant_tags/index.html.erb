@@ -16,8 +16,20 @@
 
       <% @restarant_tags.each do |restarant_tag| %>
       <tr>
-        <td><%= restarant_tag.restaurant.created_at %></td>
-        <td><%= restarant_tag.tag.created_at %></td>
+        <td>
+          <% if restarant_tag.restaurant.present? %>
+            <a href="/restaurants/<%= restarant_tag.restaurant.id %>">
+              <%= restarant_tag.restaurant.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if restarant_tag.tag.present? %>
+            <a href="/tags/<%= restarant_tag.tag.id %>">
+              <%= restarant_tag.tag.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/restarant_tags/<%= restarant_tag.id %>" class="btn btn-primary">Show</a>
           <a href="/restarant_tags/<%= restarant_tag.id %>/edit" class="btn btn-warning">Edit</a>
