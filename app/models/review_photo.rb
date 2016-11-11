@@ -5,6 +5,10 @@ class ReviewPhoto < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :restaurant,
+             :through => :review,
+             :source => :restaurant
+
   # Validations
 
 end
