@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "restaurants#index"
   # Routes for the Restarant_tag resource:
   # CREATE
   get "/restarant_tags/new", :controller => "restarant_tags", :action => "new"
