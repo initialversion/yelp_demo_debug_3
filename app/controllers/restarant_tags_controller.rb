@@ -1,6 +1,6 @@
 class RestarantTagsController < ApplicationController
   def index
-    @restarant_tags = RestarantTag.all
+    @restarant_tags = RestarantTag.page(params[:page])
 
     render("restarant_tags/index.html.erb")
   end

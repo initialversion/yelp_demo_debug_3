@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.all
+    @reviews = Review.page(params[:page])
 
     render("reviews/index.html.erb")
   end
